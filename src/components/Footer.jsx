@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="bg-blue-900 text-white py-10 mt-20">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           <div>
-            <h2 className="text-2xl font-bold mb-2">Luna's Portfolio</h2>
+            <h2 className="text-2xl font-bold mb-2">Lunas Portfolio</h2>
             <p className="text-gray-300 text-sm">
               Thank you for visiting! Connect with me through my social channels
               or shoot me an email.

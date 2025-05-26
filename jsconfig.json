@@ -8,5 +8,5 @@
   },
   "include": [
     "src/**/*"  
-  ]
+, "react_bits/rotatingtext/RotatingText.jsx"  ]
 }
