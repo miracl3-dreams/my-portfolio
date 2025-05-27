@@ -1,3 +1,5 @@
+import { time } from 'console';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -7,6 +9,7 @@ export default {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+		times: ["Times New Roman", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
