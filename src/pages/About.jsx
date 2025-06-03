@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import CatImage from "@/assets/images/Cat.png";
+import HumanImage from "@/assets/images/Lunas.png";
 import ResumePdf from "@/assets/documents/resume.pdf";
 
 const containerVariants = {
@@ -37,7 +37,7 @@ const About = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <img
-              src={CatImage}
+              src={HumanImage}
               alt="Danielle"
               className="w-full h-full object-cover"
             />

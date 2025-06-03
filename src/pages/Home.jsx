@@ -7,7 +7,7 @@ import {
   FaEnvelope,
   FaSteam,
 } from "react-icons/fa";
-import CatImage from "@/assets/images/Cat.png";
+import HumanImage from "@/assets/images/Lunas.png";
 import AnimatedText from "@/components/AnimatedText";
 
 const Home = () => {
@@ -17,9 +17,9 @@ const Home = () => {
       <section className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white flex items-center justify-center px-6">
         <div className="text-center max-w-2xl">
           <img
-            src={CatImage}
+            src={HumanImage}
             alt="Profile"
-            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg animate-fadeUp"
+            className="w-32 sm:w-36 md:w-40 lg:w-48 h-auto rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover animate-fadeUp"
             style={{ animationDelay: "0.2s" }}
           />
           <h1
