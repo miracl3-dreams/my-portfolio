@@ -14,84 +14,79 @@ const Home = () => {
   return (
     <>
       {" "}
-      <section className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white flex items-center justify-center px-6">
-        <div className="text-center max-w-2xl">
-          <img
-            src={HumanImage}
-            alt="Profile"
-            className="w-32 sm:w-36 md:w-40 lg:w-48 h-auto rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover animate-fadeUp"
-            style={{ animationDelay: "0.2s" }}
-          />
-          <h1
-            className="text-4xl md:text-4xl font-extrabold mb-4 animate-fadeUp font-mono"
-            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
-          >
-            Hi, I'm{" "}
-            <span className="text-indigo-500">
-              <AnimatedText
-                texts={["Danielle Ledesma Lunas", "Casual Dota Player"]}
-              />
-            </span>
-          </h1>
-          <p
-            className="text-lg md:text-xl text-gray-300 mb-6 animate-fadeUp font-mono"
-            style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
-          >
-            Aspiring{" "}
-            <span className="text-indigo-400">
-              Back-End Developer | IT Support Specialist
-            </span>
-          </p>
-          <div
-            className="flex justify-center space-x-6 mb-8 animate-fadeUp font-mono"
-            style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
-          >
-            <a
-              href="https://www.facebook.com/mnemosynedan.06"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-indigo-400 transition"
+      <section className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl w-full gap-10 md:gap-20 p-6 md:p-10 bg-white/10 backdrop-blur-md rounded-3xl dark:border-white transition-all font-mono">
+          <div className="md:w-1/2 text-left space-y-6">
+            <h1
+              className="text-3xl md:text-3xl font-extrabold animate-fadeUp font-mono min-h-[60px] md:min-h-[72px]"
+              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             >
-              <FaFacebook size={28} />
-            </a>
-            <a
-              href="https://www.instagram.com/miracl3_dreams/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-indigo-400 transition"
+              Hi, I'm{" "}
+              <span className="text-indigo-400 inline-block">
+                <AnimatedText
+                  texts={["Danielle Ledesma Lunas", "Casual Dota Player"]}
+                />
+              </span>
+            </h1>
+            <p
+              className="text-lg md:text-xl animate-fadeUp font-mono"
+              style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
             >
-              <FaInstagram size={28} />
-            </a>
-            <a
-              href="https://github.com/miracl3-dreams"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-indigo-400 transition"
+              Aspiring{" "}
+              <span className="text-indigo-900 dark:text-indigo-400 items-center justify-center">
+                Back-End Developer | IT Support
+              </span>
+            </p>
+            <div
+              className="flex flex-wrap gap-4 animate-fadeUp font-mono items-center justify-center"
+              style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
-              <FaGithub size={28} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/danielle-lunas-395025280/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-indigo-400 transition"
-            >
-              <FaLinkedin size={28} />
-            </a>
-            <a
-              href="mailto:lunas.danielle.10262002@gmail.com"
-              className="text-white hover:text-indigo-400 transition"
-            >
-              <FaEnvelope size={28} />
-            </a>
-            <a
-              href="https://steamcommunity.com/id/mnemosynedan06/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-indigo-400 transition"
-            >
-              <FaSteam size={28} />
-            </a>
+              {[
+                {
+                  href: "https://www.facebook.com/mnemosynedan.06",
+                  icon: <FaFacebook size={28} />,
+                },
+                {
+                  href: "https://www.instagram.com/miracl3_dreams/",
+                  icon: <FaInstagram size={28} />,
+                },
+                {
+                  href: "https://github.com/miracl3-dreams",
+                  icon: <FaGithub size={28} />,
+                },
+                {
+                  href: "https://www.linkedin.com/in/danielle-lunas-395025280/",
+                  icon: <FaLinkedin size={28} />,
+                },
+                {
+                  href: "mailto:lunas.danielle.10262002@gmail.com",
+                  icon: <FaEnvelope size={28} />,
+                },
+                {
+                  href: "https://steamcommunity.com/id/mnemosynedan06/",
+                  icon: <FaSteam size={28} />,
+                },
+              ].map(({ href, icon }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black dark:text-white hover:text-indigo-400 transition"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="md:w-1/2 flex justify-center md:justify-start md:pl-10">
+            <img
+              src={HumanImage}
+              alt="Profile"
+              className="h-[144px] w-[144px] md:h-[360px] md:w-[360px] xl:h-[480px] xl:w-[480px] rounded-full border-[#222831] dark:border-[#EEEEEE] hover:border-4 lg:hover:border-8 border-4 shadow-lg object-cover ease-in-out duration-150 animate-fadeUp"
+              style={{ animationDelay: "0.2s" }}
+            />
           </div>
         </div>
       </section>
