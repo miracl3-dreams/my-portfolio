@@ -24,9 +24,9 @@ const itemVariants = {
 const About = () => {
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-gray-800 to-black text-white flex items-center justify-center px-6">
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6">
         <motion.div
-          className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-10"
+          className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-3xl p-10 flex flex-col md:flex-row items-center gap-10"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
@@ -48,42 +48,42 @@ const About = () => {
             variants={itemVariants}
           >
             <motion.h2
-              className="text-4xl font-extrabold text-blue-800 mb-4 font-mono"
+              className="text-4xl font-extrabold text-black dark:text-white mb-4 font-mono"
               variants={itemVariants}
             >
               About Me
             </motion.h2>
             <motion.p
-              className="text-gray-700 text-lg leading-relaxed font-mono"
+              className="text-black text-lg leading-relaxed font-mono dark:text-white"
               variants={itemVariants}
             >
               Hello everyone! I'm{" "}
-              <span className="font-semibold text-blue-700 font-mono">
+              <span className="font-semibold text-black dark:text-white font-mono">
                 Danielle
               </span>{" "}
               but you can call me{" "}
-              <span className="font-semibold text-blue-700 font-mono">
+              <span className="font-semibold text-black dark:text-white  font-mono">
                 Dan.
               </span>
             </motion.p>
             <motion.p
-              className="text-gray-700 text-lg leading-relaxed mt-3 font-mono"
+              className="text-black dark:text-white text-lg leading-relaxed mt-3 font-mono"
               variants={itemVariants}
             >
               I am a graduate of BSIT course at Quezon City University.
             </motion.p>
             <motion.p
-              className="text-gray-700 text-lg leading-relaxed mt-3 font-mono"
+              className="text-black dark:text-white text-lg leading-relaxed mt-3 font-mono"
               variants={itemVariants}
             >
               I always strive to learn new technologies and improve my skills.
             </motion.p>
             <motion.p
-              className="text-gray-600 text-base mt-4 font-mono"
+              className="text-black dark:text-white text-base mt-4 font-mono"
               variants={itemVariants}
             >
               I specialize in{" "}
-              <span className="font-extrabold text-xl text-blue-700 font-mono">
+              <span className="font-extrabold text-xl text-black dark:text-white font-mono">
                 React, Tailwind CSS, Laravel, FastAPI
               </span>
               , and many more. I enjoy crafting full-stack applications from scratch.
@@ -92,7 +92,7 @@ const About = () => {
               <a
                 href={ResumePdf}
                 download="Danielle_Lunas_Resume.pdf"
-                className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold font-mono py-3 px-6 rounded-full mt-6 transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
+                className="inline-block bg-indigo-400 hover:bg-indigo-700 text-black dark:text-white font-semibold font-mono py-3 px-6 rounded-full mt-6 transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
               >
                 Download Resume
               </a>
