@@ -8,6 +8,7 @@ import Projects from "@/pages/Projects";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DarkMode from "../src/components/Darkmode";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
       <Footer />
     </>
   );
