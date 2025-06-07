@@ -10,7 +10,7 @@ const allSkills = [
     icon: "/icons/tailwindcss.png",
     type: "technology",
   },
-  { name: "Next.js (Studying)", icon: "/icons/nextjs.png", type: "technology" },
+  { name: "Next.js (CS)", icon: "/icons/nextjs.png", type: "technology" },
   { name: "Node.js", icon: "/icons/nodejs.png", type: "technology" },
   { name: "React", icon: "/icons/react.png", type: "technology" },
   { name: "ASP.NET", icon: "/icons/aspnet.png", type: "technology" },
@@ -71,16 +71,16 @@ const icons = {
 const Skills = () => {
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-gray-700 to-black py-10 px-6">
-        <h2 className="text-4xl font-bold text-center text-blue-800 mb-12 font-mono">
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white py-10 px-6">
+        <h2 className="text-2xl font-bold text-center text-black dark:text-white mb-5 font-mono">
           My Skills
         </h2>
-        <div className="space-y-12 max-w-6xl mx-auto">
+        <div className="space-y-12 max-w-5xl mx-auto">
           {Object.entries(groupedSkills).map(([category, skills], index) => (
             <div key={index}>
               <div className="flex items-center mb-4 border-l-4 border-blue-500 pl-3">
                 {icons[category]}
-                <h3 className="text-2xl font-semibold text-blue-800 font-mono">
+                <h3 className="text-2xl font-semibold text-black dark:text-white font-mono">
                   {category}
                 </h3>
               </div>
@@ -88,14 +88,14 @@ const Skills = () => {
                 {skills.map((skill, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center justify-center bg-white rounded-xl shadow-md hover:shadow-xl transition p-4"
+                    className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 rounded-xl transition p-4"
                   >
                     <img
                       src={skill.icon}
                       alt={skill.name}
                       className="w-16 h-16 object-contain mb-2"
                     />
-                    <span className="text-base   font-medium text-black font-mono">
+                    <span className="text-base font-medium text-black dark:text-white font-mono">
                       {skill.name}
                     </span>
                   </div>
