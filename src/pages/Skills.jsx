@@ -71,7 +71,10 @@ const icons = {
 const Skills = () => {
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white py-10 px-6">
+      <div
+        id="skills"
+        className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white py-10 px-6 overflow-hidden"
+      >
         <h2 className="text-2xl font-bold text-center text-black dark:text-white mb-5 font-mono">
           My Skills
         </h2>

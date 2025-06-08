@@ -13,8 +13,10 @@ import AnimatedText from "@/components/AnimatedText";
 const Home = () => {
   return (
     <>
-      {" "}
-      <section className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6">
+      <section
+        id="home"
+        className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6"
+      >
         <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl w-full gap-10 md:gap-20 p-6 md:p-10 bg-white/10 backdrop-blur-md rounded-3xl dark:border-white transition-all font-mono">
           <div className="md:w-1/2 text-left space-y-6">
             <h1
@@ -84,7 +86,8 @@ const Home = () => {
             <img
               src={HumanImage}
               alt="Profile"
-              className="h-[144px] w-[144px] md:h-[360px] md:w-[360px] xl:h-[480px] xl:w-[480px] rounded-full border-[#222831] dark:border-[#EEEEEE] hover:border-4 lg:hover:border-8 border-4 shadow-lg object-cover ease-in-out duration-150 animate-fadeUp"
+              className="rounded-full border-[#222831] dark:border-[#EEEEEE] border-4 hover:border-4 lg:hover:border-8 shadow-lg object-cover ease-in-out duration-150 animate-fadeUp
+               h-[150px] w-[150px] md:h-[360px] md:w-[360px] xl:h-[480px] xl:w-[480px]"
               style={{ animationDelay: "0.2s" }}
             />
           </div>

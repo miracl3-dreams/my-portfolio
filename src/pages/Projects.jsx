@@ -25,42 +25,47 @@ const projects = [
 
 const Project = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white px-6">
-      <h2 className="text-2xl font-bold text-center mb-5 text-blue-800 font-mono">
-        My Projects
-      </h2>
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
-            className="bg-black backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-          >
-            {project.image && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover rounded-xl mb-4"
-              />
-            )}
-            <h3 className="text-xl font-semibold text-blue-400 mb-2 font-mono">
-              {project.title}
-            </h3>
-            <p className="text-white mb-4 font-mono">{project.description}</p>
-            <a
-              href={project.link}
-              className="inline-flex items-center text-blue-300 font-mono font-medium hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
+    <>
+      <div
+        id="projects"
+        className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white py-10 px-6 overflow-hidden mt-10"
+      >
+        <h2 className="text-2xl font-bold text-center mb-5 text-black dark:text-white font-mono">
+          My Projects
+        </h2>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              className="bg-black backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all"
             >
-              View Project <FaExternalLinkAlt className="ml-2" />
-            </a>
-          </motion.div>
-        ))}
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-40 object-cover rounded-xl mb-4"
+                />
+              )}
+              <h3 className="text-xl font-semibold text-blue-400 mb-2 font-mono">
+                {project.title}
+              </h3>
+              <p className="text-white mb-4 font-mono">{project.description}</p>
+              <a
+                href={project.link}
+                className="inline-flex items-center text-blue-300 font-mono font-medium hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project <FaExternalLinkAlt className="ml-2" />
+              </a>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -24,7 +24,10 @@ const itemVariants = {
 const About = () => {
   return (
     <>
-      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6">
+      <div
+        id="about"
+        className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6"
+      >
         <motion.div
           className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-3xl p-10 flex flex-col md:flex-row items-center gap-10"
           initial="hidden"
@@ -86,7 +89,8 @@ const About = () => {
               <span className="font-extrabold text-xl text-black dark:text-white font-mono">
                 React, Tailwind CSS, Laravel, FastAPI
               </span>
-              , and many more. I enjoy crafting full-stack applications from scratch.
+              , and many more. I enjoy crafting full-stack applications from
+              scratch.
             </motion.p>
             <motion.div variants={itemVariants}>
               <a
