@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -9,8 +9,15 @@ import {
 } from "react-icons/fa";
 import HumanImage from "@/assets/images/Lunas.png";
 import AnimatedText from "@/components/AnimatedText";
+import { FaUserCircle } from "react-icons/fa";
 
 const Home = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
     <>
       <section
@@ -93,6 +100,15 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Floating Chatbot Icon */}
+      <button
+        onClick={toggleForm}
+        title="Chat on my Chatbot"
+        className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300"
+      >
+        <FaUserCircle size={24} />
+      </button>
     </>
   );
 };
