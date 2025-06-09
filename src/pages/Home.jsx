@@ -40,7 +40,7 @@ const Home = () => {
       const res = await fetch("https://python-chatbot-be.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: trimmed }),
       });
       const data = await res.json();
 
