@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -6,16 +6,55 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaSteam,
+  FaUserCircle,
+  FaPaperPlane,
+  FaTimes,
 } from "react-icons/fa";
 import HumanImage from "@/assets/images/Lunas.png";
 import AnimatedText from "@/components/AnimatedText";
-import { FaUserCircle } from "react-icons/fa";
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
+  const [input, setInput] = useState("");
+  const [chatLog, setChatLog] = useState([]);
+  const messagesEndRef = useRef(null);
 
   const toggleForm = () => {
     setShowForm(!showForm);
+  };
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chatLog]);
+
+  async function sendMessage() {
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
+    setChatLog((prev) => [...prev, { from: "user", text: trimmed }]);
+    setInput("");
+
+    try {
+      const res = await fetch("https://python-chatbot-be.onrender.com/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      });
+      const data = await res.json();
+
+      setChatLog((prev) => [...prev, { from: "bot", text: data.response }]);
+    } catch (error) {
+      setChatLog((prev) => [
+        ...prev,
+        { from: "bot", text: "Oops! Something went wrong. Please try again." },
+      ]);
+    }
+  }
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") sendMessage();
   };
 
   return (
@@ -101,7 +140,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Floating Chatbot Icon */}
       <button
         onClick={toggleForm}
         title="Chat on my Chatbot"
@@ -109,6 +147,61 @@ const Home = () => {
       >
         <FaUserCircle size={24} />
       </button>
+
+      {showForm && (
+        <div className="fixed bottom-20 right-6 z-50 w-80 max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col">
+          <div className="flex items-center justify-between p-3 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="font-bold text-lg text-green-600">Miracle Chatbot</h2>
+            <button onClick={toggleForm} title="Close Chat" className="text-gray-600 dark:text-gray-300 hover:text-red-500">
+              <FaTimes size={20} />
+            </button>
+          </div>
+
+          <div
+            className="flex-grow p-3 overflow-y-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-100 dark:scrollbar-track-gray-700"
+            style={{ maxHeight: "300px" }}
+          >
+            {chatLog.length === 0 && (
+              <p className="text-gray-500 dark:text-gray-400 text-sm italic">
+                Say hi to Miracle! 👋
+              </p>
+            )}
+            {chatLog.map((msg, idx) => (
+              <div
+                key={idx}
+                className={`my-1 p-2 rounded-md ${
+                  msg.from === "user"
+                    ? "bg-green-100 text-green-900 text-right"
+                    : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-left"
+                }`}
+              >
+                <strong>{msg.from === "user" ? "You" : "Miracle"}:</strong>{" "}
+                {msg.text}
+              </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <div className="flex p-3 border-t border-gray-300 dark:border-gray-700">
+            <input
+              type="text"
+              className="flex-grow px-3 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 focus:outline-none"
+              placeholder="Type your message..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              autoFocus
+            />
+            <button
+              onClick={sendMessage}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 rounded-r-md transition"
+              title="Send message"
+            >
+              <FaPaperPlane />
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
