@@ -29,29 +29,29 @@ const Home = () => {
     }
   }, [chatLog]);
 
-  async function sendMessage() {
-    const trimmed = input.trim();
-    if (!trimmed) return;
+  // async function sendMessage() {
+  //   const trimmed = input.trim();
+  //   if (!trimmed) return;
 
-    setChatLog((prev) => [...prev, { from: "user", text: trimmed }]);
-    setInput("");
+  //   setChatLog((prev) => [...prev, { from: "user", text: trimmed }]);
+  //   setInput("");
 
-    try {
-      const res = await fetch("https://python-chatbot-be.onrender.com/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: trimmed }),
-      });
-      const data = await res.json();
+  //   try {
+  //     const res = await fetch("https://python-chatbot-be.onrender.com/chat", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ message: trimmed }),
+  //     });
+  //     const data = await res.json();
 
-      setChatLog((prev) => [...prev, { from: "bot", text: data.response }]);
-    } catch (error) {
-      setChatLog((prev) => [
-        ...prev,
-        { from: "bot", text: "Oops! Something went wrong. Please try again." },
-      ]);
-    }
-  }
+  //     setChatLog((prev) => [...prev, { from: "bot", text: data.response }]);
+  //   } catch (error) {
+  //     setChatLog((prev) => [
+  //       ...prev,
+  //       { from: "bot", text: "Oops! Something went wrong. Please try again." },
+  //     ]);
+  //   }
+  // }
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") sendMessage();
