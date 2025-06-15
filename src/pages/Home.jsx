@@ -140,15 +140,15 @@ const Home = () => {
         </div>
       </section>
 
-      <button
+      {/* <button
         onClick={toggleForm}
         title="Chat on my Chatbot"
         className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300"
       >
         <FaUserCircle size={24} />
-      </button>
+      </button> */}
 
-      {showForm && (
+      {/* {showForm && (
         <div className="fixed bottom-20 right-6 z-50 w-80 max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col">
           <div className="flex items-center justify-between p-3 border-b border-gray-300 dark:border-gray-700">
             <h2 className="font-bold text-lg text-green-600">Miracle Chatbot</h2>
@@ -199,9 +199,9 @@ const Home = () => {
             >
               <FaPaperPlane />
             </button>
-          </div>
-        </div>
-      )}
+          // </div> */}
+        {/* </div> */}
+      {/* )} */}
     </>
   );
 };
