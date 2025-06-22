@@ -63,7 +63,7 @@ const Home = () => {
         id="home"
         className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center px-6"
       >
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl w-full gap-10 md:gap-20 p-6 md:p-10 bg-white/10 backdrop-blur-md rounded-3xl dark:border-white transition-all font-mono">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl w-full gap-10 md:gap-20 p-6 md:p-10 backdrop-blur-md rounded-3xl dark:border-white transition-all font-mono">
           <div className="md:w-1/2 text-left space-y-6">
             <h1
               className="text-3xl md:text-3xl font-extrabold animate-fadeUp font-mono min-h-[60px] md:min-h-[72px]"

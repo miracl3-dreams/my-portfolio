@@ -47,7 +47,7 @@ const NavigationBar = () => {
       </div>
 
       {mobileView && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-black text-white flex flex-col items-center justify-center gap-8 font-bold font-mono">
+        <div className="lg:hidden fixed inset-0 z-50 bg-gray-700 text-white flex flex-col items-center justify-center gap-8 font-bold font-mono">
           <a href="#home" onClick={closeMobileMenu}>
             Home
           </a>
