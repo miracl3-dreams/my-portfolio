@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/next"
 import NavigationBar from "@/components/NavigationBar";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
