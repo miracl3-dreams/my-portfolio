@@ -21,6 +21,18 @@ const projects = [
     link: "https://aag-e-commerce.netlify.app/home",
     image: "/images/ecommerce.PNG",
   },
+  {
+    title: "Pet Adoption App",
+    description: "A full-stack application for pet adoption management.",
+    link: "",
+    image: "/images/pawsitive.PNG",
+  },
+  {
+    title: "POS System",
+    description: "A Point of Sale system for managing sales and inventory.",
+    link: "",
+    image: "/images/pos.PNG",
+  }
 ];
 
 const Project = () => {
