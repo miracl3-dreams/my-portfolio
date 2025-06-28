@@ -29,29 +29,29 @@ const Home = () => {
     }
   }, [chatLog]);
 
-  // async function sendMessage() {
-  //   const trimmed = input.trim();
-  //   if (!trimmed) return;
+  async function sendMessage() {
+    const trimmed = input.trim();
+    if (!trimmed) return;
 
-  //   setChatLog((prev) => [...prev, { from: "user", text: trimmed }]);
-  //   setInput("");
+    setChatLog((prev) => [...prev, { from: "user", text: trimmed }]);
+    setInput("");
 
-  //   try {
-  //     const res = await fetch("https://python-chatbot-be.onrender.com/chat", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ message: trimmed }),
-  //     });
-  //     const data = await res.json();
+    try {
+      const res = await fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: trimmed }),
+      });
+      const data = await res.json();
 
-  //     setChatLog((prev) => [...prev, { from: "bot", text: data.response }]);
-  //   } catch (error) {
-  //     setChatLog((prev) => [
-  //       ...prev,
-  //       { from: "bot", text: "Oops! Something went wrong. Please try again." },
-  //     ]);
-  //   }
-  // }
+      setChatLog((prev) => [...prev, { from: "bot", text: data.response }]);
+    } catch (error) {
+      setChatLog((prev) => [
+        ...prev,
+        { from: "bot", text: "Oops! Something went wrong. Please try again." },
+      ]);
+    }
+  }
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") sendMessage();
@@ -140,18 +140,18 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <button
+      <button
         onClick={toggleForm}
         title="Chat on my Chatbot"
-        className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300"
+        className="fixed bottom-6 right-6 z-50 bg-indigo-400 hover:bg-indigo-400 text-white p-4 rounded-full shadow-lg transition-all duration-300"
       >
         <FaUserCircle size={24} />
-      </button> */}
+      </button> 
 
-      {/* {showForm && (
+      {showForm && (
         <div className="fixed bottom-20 right-6 z-50 w-80 max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col">
           <div className="flex items-center justify-between p-3 border-b border-gray-300 dark:border-gray-700">
-            <h2 className="font-bold text-lg text-green-600">Miracle Chatbot</h2>
+            <h2 className="font-bold text-lg text-black dark:text-white">Miracle Chatbot</h2>
             <button onClick={toggleForm} title="Close Chat" className="text-gray-600 dark:text-gray-300 hover:text-red-500">
               <FaTimes size={20} />
             </button>
@@ -194,14 +194,14 @@ const Home = () => {
             />
             <button
               onClick={sendMessage}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 rounded-r-md transition"
+              className="bg-indigo-400 hover:bg-indigo-400 text-white px-4 rounded-r-md transition"
               title="Send message"
             >
               <FaPaperPlane />
             </button>
-          // </div> */}
-        {/* </div> */}
-      {/* )} */}
+          </div>
+        </div>
+      )}
     </>
   );
 };
