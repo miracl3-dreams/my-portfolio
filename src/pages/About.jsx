@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import HumanImage from "@/assets/images/Lunas.png";
+import HumanImage from "@/assets/images/Danielle.png";
 import ResumePdf from "@/assets/documents/resume.pdf";
 
 const containerVariants = {
