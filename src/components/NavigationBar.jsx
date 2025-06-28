@@ -17,19 +17,19 @@ const NavigationBar = () => {
   return (
     <>
       <ul className="hidden lg:flex fixed top-5 left-1/2 -translate-x-1/2 bg-indigo-400 dark:bg-black/30 backdrop-blur-lg px-10 py-3 rounded-full shadow-lg text-black dark:text-white items-center gap-8 font-bold z-50 font-mono">
-        <li className="hover:text-black dark:hover:text-black hover:underline underline-offset-4">
+        <li className="hover:text-black dark:hover:text-indigo-400 hover:underline underline-offset-4">
           <a href="#home">Home</a>
         </li>
-        <li className="hover:text-black dark:hover:text-black hover:underline underline-offset-4">
+        <li className="hover:text-black dark:hover:text-indigo-400 hover:underline underline-offset-4">
           <a href="#about">About</a>
         </li>
-        <li className="hover:text-black dark:hover:text-black hover:underline underline-offset-4">
+        <li className="hover:text-black dark:hover:text-indigo-400 hover:underline underline-offset-4">
           <a href="#skills">Skills</a>
         </li>
-        <li className="hover:text-black dark:hover:text-black hover:underline underline-offset-4">
+        <li className="hover:text-black dark:hover:text-indigo-400 hover:underline underline-offset-4">
           <a href="#projects">Projects</a>
         </li>
-        <li className="hover:text-black dark:hover:text-black hover:underline underline-offset-4">
+        <li className="hover:text-black dark:hover:text-indigo-400 hover:underline underline-offset-4">
           <a href="#contacts">Contacts</a>
         </li>
         <li>
