@@ -72,7 +72,7 @@ const Home = () => {
               Hi, I'm{" "}
               <span className="text-indigo-400 inline-block">
                 <AnimatedText
-                  texts={["Danielle Ledesma Lunas", "Casual Dota Player"]}
+                  texts={["Danielle Ledesma Lunas", "Dan"]}
                 />
               </span>
             </h1>

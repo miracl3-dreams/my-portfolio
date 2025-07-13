@@ -14,6 +14,7 @@ const allSkills = [
   { name: "Node.js", icon: "/icons/nodejs.png", type: "technology" },
   { name: "React", icon: "/icons/react.png", type: "technology" },
   { name: "ASP.NET", icon: "/icons/aspnet.png", type: "technology" },
+  { name: "ASP.NET", icon: "/icons/aspnetcore.png", type: "technology" },
   { name: "MySQL", icon: "/icons/mysql.png", type: "technology" },
   {
     name: "PostgreSQL (CS)",

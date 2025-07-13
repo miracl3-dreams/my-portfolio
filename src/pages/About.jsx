@@ -87,7 +87,7 @@ const About = () => {
             >
               I specialize in{" "}
               <span className="font-extrabold text-xl text-black dark:text-white font-mono">
-                React, Tailwind CSS, Laravel, FastAPI
+                React, Tailwind CSS, Laravel, FastAPI, .NET Core
               </span>
               , and many more. I enjoy crafting full-stack applications from
               scratch.
