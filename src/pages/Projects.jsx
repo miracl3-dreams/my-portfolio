@@ -32,6 +32,12 @@ const projects = [
     description: "A Point of Sale system for managing sales and inventory.",
     link: "",
     image: "/images/pos.PNG",
+  },
+    {
+    title: "Sales and Inventory Management System",
+    description: "A system for managing sales and inventory effectively.",
+    link: "",
+    image: "/images/inventoryandsales.PNG",
   }
 ];
 
